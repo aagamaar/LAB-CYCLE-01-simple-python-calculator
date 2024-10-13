@@ -9,15 +9,16 @@ def simple_calculator():
         print("2. Subtraction")
         print("3. Multiplication")
         print("4. Division")
-        print("5. Exit")
+        print("5. Modulo ")
+        print("6. Exit")
 
-        choice = input("Enter your 1  choice (1-5): ")
+        choice = input("Enter any one of your choice (1-6): ")
 
-        if choice not in ['1', '2', '3', '4', '5']:
-            print("Invalid choice. Please enter a number between 1 and 5.")
+        if choice not in ['1', '2', '3', '4', '5', '6']:
+            print("Invalid choice. Kindly enter a number between 1 and 6")
             continue
 
-        if choice == '5':
+        if choice == '6':
             print("Exiting the calculator.")
             break
 
@@ -28,19 +29,25 @@ def simple_calculator():
         match choice:
             case '1':
                 result = num1 + num2
-                operation = "addition"
+                operation = " + "
             case '2':
                 result = num1 - num2
-                operation = "subtraction"
+                operation = " - "
             case '3':
                 result = num1 * num2
-                operation = "multiplication"
+                operation = " * "
             case '4':
                 if num2 == 0:
                     print("Error: Division by zero is not allowed.")
                     continue
                 result = num1 / num2
-                operation = "division"
+                operation = " / "
+            case '5':
+                if num2==0:
+                    print("Zero Division Error")
+                    continue
+                result= num1 % num2
+                operation= " % "
 
         print(f"{num1} {operation} {num2} = {result}")
 
